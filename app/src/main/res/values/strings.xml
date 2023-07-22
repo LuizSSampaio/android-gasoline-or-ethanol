@@ -4,4 +4,8 @@
     <string name="form_gasoline_price_field_hint">Gasoline price</string>
     <string name="form_ethanol_price_field_hint">Ethanol price</string>
     <string name="form_view_result_button">View result</string>
+    <string name="result_back">Back</string>
+    <string name="result_the_best_choice_is">The best choice is:</string>
+    <string name="fuel_gasoline">Gasoline</string>
+    <string name="fuel_ethanol">Ethanol</string>
 </resources>

@@ -28,11 +28,7 @@
                 android:autofillHints="no"
                 android:hint="@string/form_gasoline_price_field_hint"
                 android:inputType="numberDecimal"
-                android:minHeight="52dp"
-                app:layout_constraintBottom_toTopOf="@id/form_ethanol_price_field"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                android:minHeight="52dp" />
 
             <EditText
                 android:id="@+id/form_ethanol_price_field"
@@ -42,11 +38,7 @@
                 android:autofillHints="no"
                 android:hint="@string/form_ethanol_price_field_hint"
                 android:inputType="numberDecimal"
-                android:minHeight="52dp"
-                app:layout_constraintBottom_toTopOf="@id/form_result_button"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/form_gasoline_price_field" />
+                android:minHeight="52dp" />
 
             <Button
                 android:id="@+id/form_result_button"
@@ -54,11 +46,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="16dp"
                 android:layout_marginBottom="16dp"
-                android:text="@string/form_view_result_button"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/form_ethanol_price_field" />
+                android:text="@string/form_view_result_button" />
         </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>

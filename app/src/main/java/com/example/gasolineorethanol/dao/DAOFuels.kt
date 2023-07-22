@@ -1,27 +1,25 @@
 package com.example.gasolineorethanol.dao
 
-import java.math.BigDecimal
-
 class DAOFuels {
 
-    fun setGasolinePrice(price: BigDecimal) {
+    fun setGasolinePrice(price: Double) {
         gasolinePrice = price
     }
 
-    fun getGasolinePrice(): BigDecimal {
+    fun getGasolinePrice(): Double {
         return gasolinePrice
     }
 
-    fun setEthanolPrice(price: BigDecimal) {
+    fun setEthanolPrice(price: Double) {
         ethanolPrice = price
     }
 
-    fun getEthanolPrice(): BigDecimal {
+    fun getEthanolPrice(): Double {
         return ethanolPrice
     }
 
     companion object {
-        private var ethanolPrice: BigDecimal = BigDecimal.ZERO
-        private var gasolinePrice: BigDecimal = BigDecimal.ZERO
+        private var ethanolPrice: Double = 0.0
+        private var gasolinePrice: Double = 0.0
     }
 }
