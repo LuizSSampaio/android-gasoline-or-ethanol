@@ -11,6 +11,11 @@ class ResultActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_result)
+        gasolineOrEthanolCalculator()
+        backButton()
+    }
+
+    private fun gasolineOrEthanolCalculator() {
         val fuelsData = DAOFuels()
         val responseText = findViewById<TextView>(R.id.result_response_text)
         if (fuelsData.getEthanolPrice() / fuelsData.getGasolinePrice() > 0.7) {
@@ -18,6 +23,9 @@ class ResultActivity : AppCompatActivity() {
         } else {
             responseText.text = getString(R.string.fuel_ethanol)
         }
+    }
+
+    private fun backButton() {
         val backButton = findViewById<Button>(R.id.result_back_button)
         backButton.setOnClickListener {
             finish()

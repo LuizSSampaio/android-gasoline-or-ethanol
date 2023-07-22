@@ -21,9 +21,13 @@ class GasolineOrEthanolFormActivity : AppCompatActivity() {
             if (gasolineField.text.isNotEmpty() && ethanolField.text.isNotEmpty()) {
                 fuelsData.setGasolinePrice(gasolineField.text.toString().toDouble())
                 fuelsData.setEthanolPrice(ethanolField.text.toString().toDouble())
-                val intent = Intent(this, ResultActivity::class.java)
-                startActivity(intent)
+                goToResultPage()
             }
         }
+    }
+
+    private fun goToResultPage() {
+        val intent = Intent(this, ResultActivity::class.java)
+        startActivity(intent)
     }
 }
