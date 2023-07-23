@@ -3,20 +3,20 @@ package com.example.gasolineorethanol.ui.activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
-import android.widget.EditText
-import com.example.gasolineorethanol.R
 import com.example.gasolineorethanol.dao.DAOFuels
-import java.math.BigDecimal
+import com.example.gasolineorethanol.databinding.ActivityGasolineOrEthanolFormBinding
 
 class GasolineOrEthanolFormActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityGasolineOrEthanolFormBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_gasoline_or_ethanol_form)
-        val gasolineField = findViewById<EditText>(R.id.form_gasoline_price_field)
-        val ethanolField = findViewById<EditText>(R.id.form_ethanol_price_field)
+        binding = ActivityGasolineOrEthanolFormBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        val gasolineField = binding.formGasolinePriceField
+        val ethanolField = binding.formEthanolPriceField
         val fuelsData = DAOFuels()
-        val resultButton = findViewById<Button>(R.id.form_result_button)
+        val resultButton = binding.formResultButton
         resultButton.setOnClickListener {
             if (gasolineField.text.isNotEmpty() && ethanolField.text.isNotEmpty()) {
                 fuelsData.setGasolinePrice(gasolineField.text.toString().toDouble())

@@ -2,22 +2,24 @@ package com.example.gasolineorethanol.ui.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
-import android.widget.TextView
 import com.example.gasolineorethanol.R
 import com.example.gasolineorethanol.dao.DAOFuels
+import com.example.gasolineorethanol.databinding.ActivityResultBinding
 
 class ResultActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityResultBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_result)
+        binding = ActivityResultBinding.inflate(layoutInflater)
+        setContentView(binding.root)
         gasolineOrEthanolCalculator()
         backButton()
     }
 
     private fun gasolineOrEthanolCalculator() {
         val fuelsData = DAOFuels()
-        val responseText = findViewById<TextView>(R.id.result_response_text)
+        val responseText = binding.resultResponseText
         if (fuelsData.getEthanolPrice() / fuelsData.getGasolinePrice() > 0.7) {
             responseText.text = getString(R.string.fuel_gasoline)
         } else {
@@ -26,7 +28,7 @@ class ResultActivity : AppCompatActivity() {
     }
 
     private fun backButton() {
-        val backButton = findViewById<Button>(R.id.result_back_button)
+        val backButton = binding.resultBackButton
         backButton.setOnClickListener {
             finish()
         }
